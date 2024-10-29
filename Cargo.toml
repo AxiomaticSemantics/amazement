@@ -15,7 +15,7 @@ categories = ["algorithms", "game-development"]
 
 [dependencies]
 rand = "0.8.5"
-rand_chacha = "0.2.2"
+rand_chacha = "0.3.1"
 petgraph = "0.6.5"
 thiserror = "1.0.30"
 anyhow = "1.0.56"
