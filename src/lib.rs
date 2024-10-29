@@ -48,14 +48,6 @@
 //!            "Field { north: \"wall\", east: \"wall\", south: \"passage\", west: \"wall\" }");
 //! ```
 
-#[cfg(test)]
-#[macro_use]
-extern crate quickcheck;
-
-#[cfg(test)]
-#[macro_use]
-mod test_util;
-
 #[macro_use]
 pub mod prelude;
 pub mod ellers_algorithm;
