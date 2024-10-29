@@ -1,7 +1,7 @@
 use super::*;
 
 /// Defines the possible types of fields that exist in a maze
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum FieldType {
     /// Start field from which a potential user should start exploring
     Start,
