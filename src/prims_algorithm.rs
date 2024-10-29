@@ -72,12 +72,12 @@ impl PrimsGenerator {
 
         while !self.frontier.is_empty() {
             // Choose a random frontier cell
-            let next_coords = self.frontier[self.rng.gen_range(0, self.frontier.len())];
+            let next_coords = self.frontier[self.rng.gen_range(0..self.frontier.len())];
 
             // Choose a random 'in' neighbour of that cell
             self.find_visited_neighbours(maze, next_coords);
             if !self.neighbours.is_empty() {
-                let ncell = self.neighbours[self.rng.gen_range(0, self.neighbours.len())]; // neighbours is  aways non-zero length
+                let ncell = self.neighbours[self.rng.gen_range(0..self.neighbours.len())]; // neighbours is  aways non-zero length
                 maze.graph.add_edge(next_coords, ncell, ()); // Knock down the wall between them
                 self.mark_cell(maze, next_coords)
                     .with_context(|| "Could not parse passages")?; // frontier cell is now 'in'

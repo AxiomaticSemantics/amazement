@@ -116,7 +116,7 @@ impl GrowingTreeGenerator {
                         })
                         .with_context(|| "Could not carve passage")?,
                     GrowingTreeSelectionMethod::Random => {
-                        self.cell_stack[self.rng.gen_range(0, self.cell_stack.len())]
+                        self.cell_stack[self.rng.gen_range(0..self.cell_stack.len())]
                     }
                     GrowingTreeSelectionMethod::First => self.cell_stack.remove(0),
                 };
@@ -124,7 +124,7 @@ impl GrowingTreeGenerator {
                 // We have some neighbours so we can make a passage
 
                 // Choose a random neighbouring cell and move to it.
-                let next_coords = self.neighbours[self.rng.gen_range(0, self.neighbours.len())];
+                let next_coords = self.neighbours[self.rng.gen_range(0..self.neighbours.len())];
                 maze.graph.add_edge(current_coordinates, next_coords, ()); // Knock down the wall between them
                 self.cell_stack.push(next_coords);
                 current_coordinates = next_coords;

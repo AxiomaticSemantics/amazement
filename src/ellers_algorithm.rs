@@ -282,7 +282,7 @@ impl EllersGenerator {
                 let count = if !bottom_most_fields.is_empty() {
                     1
                 } else {
-                    self.rng.gen_range(1, bottom_most_fields.len())
+                    self.rng.gen_range(1..bottom_most_fields.len())
                 };
 
                 for coordinates in bottom_most_fields.choose_multiple(&mut self.rng, count) {
